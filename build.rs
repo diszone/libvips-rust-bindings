@@ -2,7 +2,7 @@
 fn main() {
     #[cfg(windows)] 
     {
-    let dir = env::var("CARGO_MANIFEST_DIR").unwrap();
+    let dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
     println!("cargo:rustc-link-search=native={}", Path::new(&dir).join.("lib"));
     println!("cargo:rustc-link-lib=libvips");
     println!("cargo:rustc-link-lib=libglib-2.0");
