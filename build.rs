@@ -2,10 +2,11 @@
 fn main() {
     #[cfg(windows)] 
     {
-    println!("cargo:rustc-link-search=native={}", "lib");
-    println!("cargo:rustc-link-lib=libvips.lib");
-    println!("cargo:rustc-link-lib=libglib-2.0.lib");
-    println!("cargo:rustc-link-lib=libgobject-2.0.lib");
+    let dir = env::var("CARGO_MANIFEST_DIR").unwrap();
+    println!("cargo:rustc-link-search=native={}", Path::new(&dir).join.("lib"));
+    println!("cargo:rustc-link-lib=libvips");
+    println!("cargo:rustc-link-lib=libglib-2.0");
+    println!("cargo:rustc-link-lib=libgobject-2.0");
     }
 
     #[cfg(not(windows))]
