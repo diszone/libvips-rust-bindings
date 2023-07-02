@@ -3,9 +3,9 @@ fn main() {
     #[cfg(windows)] 
     {
     println!("cargo:rustc-link-search=native={}", "lib");
-    println!("cargo:rustc-link-lib=libvips");
-    println!("cargo:rustc-link-lib=libglib-2.0");
-    println!("cargo:rustc-link-lib=libgobject-2.0");
+    println!("cargo:rustc-link-lib=libvips.lib");
+    println!("cargo:rustc-link-lib=libglib-2.0.lib");
+    println!("cargo:rustc-link-lib=libgobject-2.0.lib");
     }
 
     #[cfg(not(windows))]
