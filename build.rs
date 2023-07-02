@@ -1,6 +1,6 @@
 // (c) Copyright 2019-2023 OLX
 fn main() {
-    if cfg!(Windows) {
+    if cfg!(windows) {
     let dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
     println!("cargo:rustc-link-search=native={}", std::path::Path::new(&dir).join("lib").to_str().unwrap());
     println!("cargo:rustc-link-lib=libvips");
